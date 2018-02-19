@@ -1,0 +1,19 @@
+#main {
+  background-color: gray;
+  padding: 5px;
+}
+
+nav {
+  background-color: gray;
+  color: white;
+  padding: 5px;
+  margin: 0 0 5px 0;
+}
+
+footer {
+  color: white;
+  padding: 5px;
+  background-color: gray;
+  margin: 5px 0 0 0;
+  position: relative;
+}
