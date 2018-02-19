@@ -1,7 +1,8 @@
 $(function() {
 	function TableModel(rows, cols) {
-		this._rows = rows;
-		this._cols = cols;
+		this._rowCount = rows;
+		this._colCount = cols;
+		this.cells = []
 	}
 	
 	TableModel.prototype.setRows = function(rows) {
