@@ -13,5 +13,45 @@ $(function() {
 		return this._rows;
 	}
 	
-	$("#main").text("This is text from js-script...");
+	TableModel.prototype.setCols = function(cols) {
+		this._cols = cols;
+	}
+	
+	TableModel.prototype.getCols = function() {
+		return this._cols;
+	}
+	
+	TableModel.prototype.setSize = function(rows, cols) {
+		this.setRows(rows);
+		this.setCols(cols);
+	}
+	
+	TableModel.prototype.getSize = function() {
+		return [this._rows, this._cols];
+	}
+	
+	TableModel.prototype.getCell = function(row, col) {
+		return this.cells[row][col];
+	}
+	
+	function Cell(value) {
+		this._value = value;
+	}
+	
+	Cell.prototype.setValue(value) {
+		this._value = value;
+	}
+	
+	Cell.prototype.getValue() {
+		return this._value;
+	}
+	
+	var txt = "";
+	
+	if (window.File && window.FileReader && window.FileList && window.Blob) {
+		txt = "This browser support fileAPI!!!";
+	} else {
+		txt = "This is text from js-script...";
+	}
+	$("#main").text(txt);
 })
