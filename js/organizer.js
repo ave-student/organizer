@@ -1,8 +1,19 @@
 $(function() {
-	function TableModel(rows, cols) {
+	
+	var txt = "";
+	
+	if (window.File && window.FileReader && window.FileList && window.Blob) {
+		txt = "This browser support fileAPI!!!";
+	} else {
+		txt = "This is text from js-script...";
+	}
+	
+	$("#main").text(txt);
+	
+ 	function TableModel(rows, cols) {
 		this._rowCount = rows;
 		this._colCount = cols;
-		this.cells = []
+		this.cells = [];
 	}
 	
 	TableModel.prototype.setRows = function(rows) {
@@ -27,7 +38,8 @@ $(function() {
 	}
 	
 	TableModel.prototype.getSize = function() {
-		return [this._rows, this._cols];
+		return 0
+		//return [this._rows, this._cols];
 	}
 	
 	TableModel.prototype.getCell = function(row, col) {
@@ -38,20 +50,11 @@ $(function() {
 		this._value = value;
 	}
 	
-	Cell.prototype.setValue(value) {
+	Cell.prototype.setValue = function(value) {
 		this._value = value;
 	}
 	
-	Cell.prototype.getValue() {
+	Cell.prototype.getValue = function() {
 		return this._value;
 	}
-	
-	var txt = "";
-	
-	if (window.File && window.FileReader && window.FileList && window.Blob) {
-		txt = "This browser support fileAPI!!!";
-	} else {
-		txt = "This is text from js-script...";
-	}
-	$("#main").text(txt);
 })
